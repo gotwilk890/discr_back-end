@@ -2,6 +2,7 @@
 
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+var uniqueValidator = require('mongoose-unique-validator');
 
 var todaysDate = function(){
     var today = new Date();
@@ -25,6 +26,7 @@ var reviewSchema = new mongoose.Schema({
   user_ObjectId: {
     type: [mongoose.Schema.Types.ObjectId],
     required: true,
+    unique: true,
     ref: "User"
   },
   userName: {
@@ -43,11 +45,14 @@ var reviewSchema = new mongoose.Schema({
     required: true,
     ref: 'Actual Review'
   },
-  course_objectId:{
+  course_ObjectId:{
     type: [mongoose.Schema.Types.ObjectId],
+    required: true,
     ref: 'Course ID'
   }
 });
+
+reviewSchema.plugin(uniqueValidator);
 
 
 module.exports = reviewSchema;
