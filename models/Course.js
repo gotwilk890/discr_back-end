@@ -1,6 +1,8 @@
 'use strict'
 
 var mongoose = require('mongoose');
+var uniqueValidator = require('mongoose-unique-validator');
+var Schema = mongoose.Schema;
 
 
 var courseSchema = new mongoose.Schema({
@@ -54,10 +56,13 @@ var courseSchema = new mongoose.Schema({
     type: 'String',
     required: true,
     ref: 'course rating'
+  },
+  review_objectId:{
+    type: [mongoose.Schema.Types.ObjectId],
+    ref: 'Course reviews'
   }
-
 });
 
 courseSchema.plugin(uniqueValidator);
 
-module.exports = orderSchema;
+module.exports = courseSchema;
