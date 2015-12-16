@@ -20,15 +20,17 @@ module.exports = {
                         Course.create({
                             user_ObjectId: req.user._id,
                             name: req.body.name,
-                            est_date: req.body.est_date,
-                            address: req.body.address,
+                            street_address: req.body.street_address,
+                            town: req.body.town,
+                            state: req.body.state,
+                            country: req.body.country,
+                            lat: req.body.lat,
+                            lng: req.body.lng,
                             holes: req.body.holes,
                             tees: req.body.tees,
                             layout: req.body.layout,
                             fee: req.body.fee,
-                            directions: req.body.directions,
-                            rating: req.body.rating,
-                            review_objectId: []
+                            rating: req.body.rating
                         }, function(err, course) {
                             if(err) {
                                 rej(err);
