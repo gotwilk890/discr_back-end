@@ -16,17 +16,27 @@ var courseSchema = new mongoose.Schema({
     required: true,
     ref: "Course name"
   },
-  est_date: {
-    type: 'String',
-    required: true,
-    ref: 'Established Date'
-  },
-  address: {
+  street_address: {
     type: 'String',
     required: true,
     unique: true,
     ref: 'Course Address'
   },
+  town:{
+    type: 'String',
+    required: true,
+    ref: 'Course Address'
+  },
+  state:{
+    type: 'String',
+    required: true,
+    ref: 'Course Address'
+  },
+  country:{
+    type: 'String',
+    required: true,
+    ref: 'Course Address'
+  }
   holes: {
     type: 'String',
     required: true,
@@ -47,20 +57,11 @@ var courseSchema = new mongoose.Schema({
     required: true,
     ref: 'fee to play'
   },
-  directions: {
-    type: 'String',
-    required: true,
-    ref: 'basic directions'
-  },
   rating:{
     type: 'String',
     required: true,
     ref: 'course rating'
   },
-  review_objectId:{
-    type: [mongoose.Schema.Types.ObjectId],
-    ref: 'Course reviews'
-  }
 });
 
 courseSchema.plugin(uniqueValidator);
