@@ -36,7 +36,17 @@ var courseSchema = new mongoose.Schema({
     type: 'String',
     required: true,
     ref: 'Course Address'
-  }
+  },
+  lat:{
+    type: 'String',
+    required: true,
+    ref: 'Course Address'
+  },
+  lng:{
+    type: 'String',
+    required: true,
+    ref: 'Course Address'
+  },
   holes: {
     type: 'String',
     required: true,
