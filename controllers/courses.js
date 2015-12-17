@@ -29,7 +29,7 @@ module.exports = {
         post : function(req, res, next) {
                     var pCourse = new Promise(function(res, rej) {
                         Course.create({
-                            user_ObjectId: req.user._id,
+                            user_ObjectId: req.user.userName,
                             name: req.body.name,
                             street_address: req.body.street_address,
                             town: req.body.town,

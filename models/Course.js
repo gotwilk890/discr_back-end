@@ -5,8 +5,8 @@ var Schema = mongoose.Schema;
 
 
 var courseSchema = new mongoose.Schema({
-  user_ObjectId: {
-    type: [mongoose.Schema.Types.ObjectId],
+  user: {
+    type: 'String',
     required: true,
     ref: "User"
   },
