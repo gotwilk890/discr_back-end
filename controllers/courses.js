@@ -14,6 +14,17 @@ module.exports = {
             });
         }
     },
+    findOne : {
+        get : function index(req, res, next) {
+            var courseName = req.params.name;
+            console.log(courseName);
+            Course.find({name: courseName}).exec().then(function(course) {
+                  res.json(course);
+                }).catch(function(error) {
+                  next(error);
+            });
+        }
+    },
     create : {
         post : function(req, res, next) {
                     var pCourse = new Promise(function(res, rej) {

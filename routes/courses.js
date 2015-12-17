@@ -7,6 +7,7 @@ router.get('/', courses.root.get);
 router.post('/', courses.create.post);
 router.patch('/', courses.update.patch);
 router.delete('/', courses.destroy.delete);
+router.get('/:name', courses.findOne.get);
 
 
 module.exports = router;
