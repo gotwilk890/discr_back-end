@@ -29,8 +29,7 @@ module.exports = {
                             holes: req.body.holes,
                             tees: req.body.tees,
                             layout: req.body.layout,
-                            fee: req.body.fee,
-                            rating: req.body.rating
+                            fee: req.body.fee
                         }, function(err, course) {
                             if(err) {
                                 rej(err);
