@@ -65,11 +65,6 @@ var courseSchema = new mongoose.Schema({
     required: true,
     ref: 'fee to play'
   },
-  rating:{
-    type: 'String',
-    required: true,
-    ref: 'course rating'
-  },
 });
 
 
