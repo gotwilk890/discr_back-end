@@ -1,5 +1,5 @@
 var Review = require('../models').model('Review');
-var db = require('../models/index');
+var db = require('../models/Index');
 
 module.exports = {
     deny : function(req, res) {
