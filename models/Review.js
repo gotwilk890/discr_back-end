@@ -1,7 +1,6 @@
 'use strict'
 
 var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
 var uniqueValidator = require('mongoose-unique-validator');
 
 var todaysDate = function(){
