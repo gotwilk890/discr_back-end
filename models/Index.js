@@ -7,6 +7,6 @@ mongoose.model('User', require('./User'));
 mongoose.model('Course', require('./Course'));
 mongoose.model('Review', require('./Review'));
 
-mongoose.connect("mongodb://localhost/discrdb");
+mongoose.connect(process.env.MONGOLAB_URI);
 
 module.exports = mongoose;
