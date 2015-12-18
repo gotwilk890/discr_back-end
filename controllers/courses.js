@@ -17,9 +17,9 @@ module.exports = {
     findOne : {
         get : function index(req, res, next) {
             var courseName = req.params.name;
-            console.log(courseName);
             Course.find({name: courseName}).exec().then(function(course) {
                   res.json(course);
+                  console.log(course);
                 }).catch(function(error) {
                   next(error);
             });
@@ -29,7 +29,7 @@ module.exports = {
         post : function(req, res, next) {
                     var pCourse = new Promise(function(res, rej) {
                         Course.create({
-                            user_ObjectId: req.user.userName,
+                            user: req.user.userName,
                             name: req.body.name,
                             street_address: req.body.street_address,
                             town: req.body.town,
@@ -60,8 +60,8 @@ module.exports = {
     update: {
         patch : function(req,res,next) {
             var pCourse = new Promise(function(res, rej){
-                Course.update({user_ObjectId: req.user._id, _id: req.body.course_ObjectId},{
-                    user_ObjectId: req.user._id,
+                Course.update({user: req.user.userName, _id: req.body._id},{
+                    user: req.user.userName,
                     name: req.body.name,
                     street_address: req.body.street_address,
                     town: req.body.town,
@@ -93,7 +93,7 @@ module.exports = {
     },
     destroy : {
         delete : function(req, res, next) {
-            Course.remove({user_ObjectId: req.user._id, _id: req.body.course_ObjectId}, function(err, course) {
+            Course.remove({user: req.user.userName, _id: req.body._id}, function(err, course) {
                 if (err) return next(err);
                 res.send(course); // see results
             });
