@@ -2,7 +2,7 @@
 
 var passport = require('passport');
 var User = require('../models').model('User');
-var db = require('../models/Index');
+var db = require('../models/index');
 
 module.exports = {
     deny : function(req, res) {

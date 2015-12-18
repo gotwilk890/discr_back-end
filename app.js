@@ -1,5 +1,5 @@
 'use strict'
-var db = require('./models/Index');
+var db = require('./models/index');
 
 var express = require('express');
 var path = require('path');

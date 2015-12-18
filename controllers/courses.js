@@ -1,5 +1,5 @@
 var Course = require('../models').model('Course');
-var db = require('../models/Index');
+var db = require('../models/index');
 
 module.exports = {
     deny : function(req, res) {
