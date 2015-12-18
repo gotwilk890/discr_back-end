@@ -9,4 +9,4 @@ mongoose.model('Review', require('./Review'));
 
 mongoose.connect(process.env.MONGOLAB_URI);
 
-module.exports = mongoose.connection;
+module.exports = mongoose;
