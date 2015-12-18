@@ -27,7 +27,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
 app.use(cors({
-  origin: ['http://localhost:5000', 'http://berners-lee.github.io'],
+  origin: ['http://localhost:5000', 'http://gotwilk890.github.io'],
   credentials: true
 }));
 
